@@ -37,35 +37,38 @@ check_credentials() {
                                     sshpass -p "usuario" scp "./scripts/linux/apagar.sh" usuario@10.10.10.4:~/
                                     sshpass -p "usuario" ssh usuario@10.10.10.4 "echo 'usuario' | sudo -S bash ~/apagar.sh"
                                     sshpass -p "usuario" ssh usuario@10.10.10.4 "rm ~/apagar.sh"
-                                    echo "equipo $ip apagado"				
+                                    echo "equipo $dir apagado"				
                                     ;;
                                 2)
                                     echo "Reiniciando equipo"
                                     sshpass -p "usuario" scp "./scripts/linux/reiniciar.sh" usuario@10.10.10.4:~/
                                     sshpass -p "usuario" ssh usuario@10.10.10.4 "echo 'usuario' | sudo -S bash ~/reiniciar.sh"
                                     sshpass -p "usuario" ssh usuario@10.10.10.4 "rm ~/reiniciar.sh"
-                                    echo "equipo $ip reiniciado"
+                                    echo "equipo $dir reiniciado"
 				    ;;
                                 3)
                                     echo "Sacando captura de pantalla"
                                     sshpass -p "usuario" scp "./scripts/linux/captura_pantalla.sh" usuario@10.10.10.4:~/
                                     sshpass -p "usuario" ssh usuario@10.10.10.4 "echo 'usuario' | sudo -S bash ~/captura_pantalla.sh"
                                     sshpass -p "usuario" ssh usuario@10.10.10.4 "rm ~/captura_pantalla.sh"
-                                    ;;
+                                   ;;
                                 4)
                                     echo "Mostrando información de los escritorios"
                                    ./scripts/linux/config.sh
                                     sshpass -p "usuario" scp "./scripts/linux/config.sh" usuario@10.10.10.4:~/
                                     sshpass -p "usuario" ssh usuario@10.10.10.4 "echo 'usuario' | sudo -S bash ~/config.sh"
                                     sshpass -p "usuario" ssh usuario@10.10.10.4 "rm ~/config.sh"
-				    echo "Información de escritorios mostrada para $ip"
+				    sshpass -p "usuario" scp -r usuario@10.10.10.4:/informes/ ./informes
+				    echo "Información de escritorios mostrada para $dir"
                                     ;;
                                 5)
     				    echo "Mostrando estado de los discos"
                                     sshpass -p "usuario" scp "./scripts/linux/disco.sh" usuario@10.10.10.4:~/
                                     sshpass -p "usuario" ssh usuario@10.10.10.4 "echo 'usuario' | sudo -S bash ~/disco.sh"
                                     sshpass -p "usuario" ssh usuario@10.10.10.4 "rm ~/disco.sh"
-                                    echo "Estado de los discos de $ip mostrado"
+				    sshpass -p "usuario" scp usuario@10.10.10.4:~/ "./informes/"
+				    sshpass -p "usuario" scp -r usuario@10.10.10.4:/informes/ ./informes
+                                    echo "Estado de los discos de $dir mostrado"
 
                                     ;;
                                 6)
@@ -73,7 +76,9 @@ check_credentials() {
 				    sshpass -p "usuario" scp "./scripts/linux/informacion_sistema.sh" usuario@10.10.10.4:~/
                                     sshpass -p "usuario" ssh usuario@10.10.10.4 "echo 'usuario' | sudo -S bash ~/informacion_sistema.sh"
                                     sshpass -p "usuario" ssh usuario@10.10.10.4 "rm ~/informacion_sistema.sh"
-				    echo "Información de $ip mostrada"
+				    sshpass -p "usuario" scp usuario@10.10.10.4:~/ "./informes/"
+				    sshpass -p "usuario" scp -r usuario@10.10.10.4:/informes/ ./informes
+				    echo "Información de $dir mostrada"
                                     ;;
                                 7)
                                     echo "Mostrando información de red"
@@ -81,7 +86,9 @@ check_credentials() {
                                     sshpass -p "usuario" scp "./scripts/linux/ip.sh" usuario@10.10.10.4:~/
                                     sshpass -p "usuario" ssh usuario@10.10.10.4 "echo 'usuario' | sudo -S bash ~/ip.sh"
                                     sshpass -p "usuario" ssh usuario@10.10.10.4 "rm ~/ip.sh"
-				    echo "Información de red mostrada para $ip"
+				    sshpass -p "usuario" scp usuario@10.10.10.4:~/ "./informes/"
+				    echo "Información de red mostrada para $dir"
+				    sshpass -p "usuario" scp -r usuario@10.10.10.4:/informes/ ./informes
                                     ;;
                                 8)
                                     echo "Volviendo..."
@@ -91,6 +98,7 @@ check_credentials() {
                                     echo "ERROR. Opción inválida 2"
                                     ;;
                             esac
+			    sshpass -p "usuario" scp -r usuario@10.10.10.4:/informes/ ./informes
                         done
                         ;;
 		    3)
@@ -126,21 +134,23 @@ check_credentials() {
                                     sshpass -p "usuario" scp "./scripts/linux/apagar.sh" usuario@10.10.10.4:~/
 				    sshpass -p "usuario" ssh usuario@10.10.10.4 "echo 'usuario' | sudo -S bash ~/apagar.sh"
 				    sshpass -p "usuario" ssh usuario@10.10.10.4 "rm ~/apagar.sh"
-				    echo "equipo $ip apagado"
+				    echo "equipo $dir apagado"
                                     ;;
                                 2)
                                     echo "Reiniciando equipo"
 				    sshpass -p "usuario" scp "./scripts/linux/reiniciar.sh" usuario@10.10.10.4:~/
 				    sshpass -p "usuario" ssh usuario@10.10.10.4 "echo 'usuario' | sudo -S bash ~/reiniciar.sh"
 				    sshpass -p "usuario" ssh usuario@10.10.10.4 "rm ~/reiniciar.sh"
-				    echo "equipo $ip reiniciado"
+				    echo "equipo $dir reiniciado"
                                     ;;
                                 3)
                              	    echo "Mostrando estado de los discos"
                                     sshpass -p "usuario" scp "./scripts/linux/disco.sh" usuario@10.10.10.4:~/
                                     sshpass -p "usuario" ssh usuario@10.10.10.4 "echo 'usuario' | sudo -S bash ~/disco.sh"
                                     sshpass -p "usuario" ssh usuario@10.10.10.4 "rm ~/disco.sh"
-				    echo "Estado de los discos mostrado"
+				    sshpass -p "usuario" scp usuario@10.10.10.4:~/ "./informes/" 
+				    sshpass -p "usuario" scp -r usuario@10.10.10.4:/informes/ ./informes/
+				    echo "Estado de los discos mostrado para $dir"
                                     ;;
                                 4)
                                     echo "Volviendo..."

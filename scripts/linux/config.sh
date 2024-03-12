@@ -1,3 +1,10 @@
 #!/bin/bash
-#comando que recopila información acerca de los escritorios en el equipo local.
+
+archivo="/informes/config_$(date +"%Y%m%d-%H%M%S").txt"
+{
+# Obtener información sobre los escritorios y ventanas
+echo "Información de escritorios y ventanas:"
+wmctrl -l
+echo "--------------------------------------"
 wmctrl -d
+} > $archivo

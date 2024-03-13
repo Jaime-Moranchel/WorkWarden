@@ -60,6 +60,8 @@ WorkWarden depende de comandos como mysql y nmap. Asegúrese de que estas depend
 ~~~
 sudo apt-get install mysql-server nmap wmic openssh-server scrot smartmontools -y
 ~~~
+## ⚠️ NOTA
+También hay que instalar las dependencias en los clientes remotos a excepción de `mysql-server`
 ## Construido con 🛠️
 - Bash
 - Powershell
@@ -69,4 +71,5 @@ WorkWarden proporciona una interfaz fácil de usar para gestionar y realizar acc
 
 ## Autor 🖋
 - Jaime Moranchel - [Perfil](https://github.com/Jaime-Moranchel)	
+
 

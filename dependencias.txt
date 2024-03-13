@@ -1,3 +1,7 @@
 mysql-server
-wmctrl
 sshpass
+nmap
+wmic
+openssh-server
+scrot
+smartmontools

@@ -14,7 +14,7 @@ o
 ~~~
 sudo ./WorkWarden.sh
 ~~~
-Se le pedirá que introduzca su nombre de usuario y contraseña. Una vez autenticado, aparecerá el menú principal.
+Se le pedirá introducir un nombre de usuario y contraseña. Una vez autenticado, aparecerá el menú principal.
 
 ## MENU PRINCIPAL
 El menú principal ofrece las siguientes opciones:

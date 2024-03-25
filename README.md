@@ -1,6 +1,6 @@
 # WorkWarden
 
-WorkWarden es una herramienta de gestión de sistemas que permite a los usuarios realizar diversas acciones en hosts remotos. Requiere la autenticación del usuario mediante un nombre de usuario y una contraseña para acceder a las funciones del sistema.
+WorkWarden es una herramienta de gestión de sistemas para Linux que permite a los usuarios realizar diversas acciones en hosts remotos. Requiere la autenticación del usuario mediante un nombre de usuario y una contraseña para acceder a las funciones del sistema.
 
 ## Cómo funciona
 [Diagrama de flujo](https://drive.google.com/file/d/1yxFhWzZaQbsKzFqkFpxiNEydIqa65j_W/view)
